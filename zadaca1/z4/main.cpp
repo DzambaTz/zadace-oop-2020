@@ -16,15 +16,13 @@ void pauziraj(unsigned int msec) {
 }
 
 void print_segment(const int length, const char c) {
-  for (int i = 0; i < length; ++i) {
-    std::cout << c;
-  }
+  std::string segment(length, c);
+  std::cout << segment;
 }
 
 void print_segment(const int length, const char c, const int timeout) {
-  for (int i = 0; i < length; ++i) {
-    std::cout << c;
-  }
+  std::string segment(length, c);
+  std::cout << segment;
   pauziraj(timeout);
 }
 
@@ -51,8 +49,7 @@ int main() {
     print_segment(col_num * g1 / 100, '=', 600);
     print_segment(col_num * g2 / 100, '=', 600);
     print_segment(col_num * g3 / 100, '=', 600);
-    print_segment(col_num * g4 / 100 + extra, '=');
-    pauziraj(600);
+    print_segment(col_num * g4 / 100 + extra, '=', 600);
     std::cout << '\r';
     std::cout << '[';
     print_segment(col_num * g1 / 100, ' ', 600);

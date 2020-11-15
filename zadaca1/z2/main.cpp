@@ -44,18 +44,20 @@ int main() {
     std::cin >> option;
 
     if (option == 1) {
+      std::cout << "The value of this register is: " << *active_reg
+                << std::endl;
       printBits(*active_reg);
     } else if (option == 2) {
       std::cout << "Enter bit number: ";
       std::cin >> bit;
-      *active_reg += pow(2, bit);
+      *active_reg |= 1 << bit;
       std::cout << "New register value: " << *active_reg << std::endl;
       printBits(*active_reg);
     } else if (option == 3) {
       std::cout << "Enter bit number: ";
       std::cin >> bit;
-      *active_reg -= pow(2, bit);
-      std::cout << "New register value: " << active_reg << std::endl;
+      *active_reg &= ~(1 << bit);
+      std::cout << "New register value: " << *active_reg << std::endl;
       printBits(*active_reg);
     } else if (option == 4) {
       reg1 = reg1 ^ reg2;
