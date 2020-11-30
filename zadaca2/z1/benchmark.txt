@@ -1,0 +1,43 @@
+------------------------------------------------------------------------------------------------------------
+Benchmark results where we passed the 'dictionary' vector as a reference:
+ Performance counter stats for './a.out' (100 runs):
+
+             64.22 msec task-clock:u              #    0.995 CPUs utilized            ( +-  0.12% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+             7,952      page-faults:u             #    0.124 M/sec                    ( +-  0.00% )
+       203,967,343      cycles:u                  #    3.176 GHz                      ( +-  0.07% )
+       444,030,253      instructions:u            #    2.18  insn per cycle           ( +-  0.00% )
+        93,303,642      branches:u                # 1452.816 M/sec                    ( +-  0.00% )
+           511,752      branch-misses:u           #    0.55% of all branches          ( +-  0.05% )
+
+         0.0645587 +- 0.0000797 seconds time elapsed  ( +-  0.12% )
+------------------------------------------------------------------------------------------------------------
+Benchmark results where we passed the 'dictionary' vector by value:
+ Performance counter stats for './a.out' (100 runs):
+
+             84.17 msec task-clock:u              #    0.996 CPUs utilized            ( +-  0.09% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+            11,716      page-faults:u             #    0.139 M/sec                    ( +-  0.00% )
+       262,177,644      cycles:u                  #    3.115 GHz                      ( +-  0.06% )
+       548,570,555      instructions:u            #    2.09  insn per cycle           ( +-  0.00% )
+       116,849,018      branches:u                # 1388.246 M/sec                    ( +-  0.00% )
+           661,189      branch-misses:u           #    0.57% of all branches          ( +-  0.09% )
+
+         0.0845242 +- 0.0000808 seconds time elapsed  ( +-  0.10% )
+------------------------------------------------------------------------------------------------------------
+Benchmark results where we cast 'word' to an rvalue reference during v.push_back() and also copy the vector:
+ Performance counter stats for './a.out' (100 runs):
+
+             93.14 msec task-clock:u              #    0.996 CPUs utilized            ( +-  0.11% )
+                 0      context-switches:u        #    0.000 K/sec                  
+                 0      cpu-migrations:u          #    0.000 K/sec                  
+            11,775      page-faults:u             #    0.126 M/sec                    ( +-  0.00% )
+       297,343,611      cycles:u                  #    3.193 GHz                      ( +-  0.09% )
+       591,810,337      instructions:u            #    1.99  insn per cycle           ( +-  0.00% )
+       122,056,203      branches:u                # 1310.504 M/sec                    ( +-  0.00% )
+           674,783      branch-misses:u           #    0.55% of all branches          ( +-  0.73% )
+
+          0.093504 +- 0.000108 seconds time elapsed  ( +-  0.12% )
+------------------------------------------------------------------------------------------------------------
