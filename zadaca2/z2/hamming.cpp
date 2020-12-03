@@ -35,14 +35,15 @@ std::vector<std::string> similarStrings(const std::vector<std::string> &v,
     std::cout << "Couldn't find words with distance less than 2" << std::endl;
     return {};
   }
-  std::sort(result.begin(), result.end(), [&](std::string a, std::string b) {
-    for (size_t i = 0; i < a.size(); ++i) {
-      if (tolower(a[i]) != tolower(word[i])) {
-        return false;
-      }
-    }
-    return true;
-  });
+  std::sort(result.begin(), result.end(),
+            [&word](std::string a, std::string b) {
+              for (size_t i = 0; i < a.size(); ++i) {
+                if (tolower(a[i]) != tolower(word[i])) {
+                  return false;
+                }
+              }
+              return true;
+            });
 
   return result;
 }

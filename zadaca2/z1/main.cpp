@@ -3,13 +3,6 @@
 #include <string>
 #include <vector>
 
-#if 0
-void *operator new(size_t size) {
-  std::cout << "Allocated " << size << " bytes" << std::endl;
-  return malloc(size);
-}
-#endif
-
 std::vector<std::string> over25chars(std::vector<std::string> &v) {
   std::vector<std::string> result;
 
