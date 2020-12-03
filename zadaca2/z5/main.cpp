@@ -14,7 +14,7 @@ int main() {
     }
   }
 
-  std::cout << "Number of character appereances: " << std::endl;
+  std::cout << "Broj pojavljivanja karaktera: " << std::endl;
   for (auto &[c, count] : counter) {
     std::cout << c << ": " << count << std::endl;
   }
