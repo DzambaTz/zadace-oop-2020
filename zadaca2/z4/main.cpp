@@ -29,6 +29,8 @@ double unos_elemenata_i_racun_prosjeka(kontejner &lista) {
   std::cout << "Unesite elemente u listu: " << std::endl;
   double x;
   double suma = 0.;
+  cin.clear();
+  // cin.ignore();
   while (cin >> std::noskipws >> x) {
     lista.push_back(x);
     suma += x;
@@ -47,7 +49,7 @@ void ispis_elemenata(const kontejner &lista) {
 
 int main() {
   kontejner lista1;
-  while (true) {
+  while ( lista1.empty() ) {
     try {
       auto p = unos_elemenata_i_racun_prosjeka(lista1);
       auto m = median(lista1);
@@ -56,8 +58,6 @@ int main() {
       break;
     } catch (const std::string &e) {
       std::cout << "Greska: " << e << std::endl;
-      cin.clear();
-      cin.ignore();
       continue;
     }
   }
