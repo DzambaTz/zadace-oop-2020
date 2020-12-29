@@ -17,7 +17,7 @@ int main() {
     std::cout << "Unesite duzine stranica: ";
     std::cin >> a >> b >> c;
 
-    if (sqrt(a * a + b * b) == floor(sqrt(a * a + b * b)))
+    if (sqrt(a * a + b * b) == sqrt(c * c))
       printf("Trougao (%d, %d, %d) je pravougli trougao\n", a, b, c);
     else
       std::cout << "Uneseni trougao nije pravougli" << std::endl;

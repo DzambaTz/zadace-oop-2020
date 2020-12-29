@@ -20,7 +20,7 @@ int main() {
   std::vector<std::string> dictionary;
   std::string word;
   while (dictionaryFile >> word) {
-    dictionary.push_back(word);
+    dictionary.push_back(word); // std::move(word);
   }
 
   std::cout << "Words longer that 25 characters:" << std::endl;
