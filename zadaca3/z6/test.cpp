@@ -45,6 +45,7 @@ TEST_CASE("my::sort sorts a list of six ints with a predicate function") {
   std::list<int> s{-8, -8, 0, 1, 10, 18};
   my::sort(begin(v), end(v),
            [](const auto &a, const auto &b) { return a > b; });
+  reverse(begin(s), end(s));
   CHECK(equal(begin(v), end(v), begin(s)));
 }
 
@@ -53,6 +54,5 @@ TEST_CASE("my::sort sorts a vector of four strings with a predicate function") {
   std::vector<std::string> s{"onda", "ako", "p", "q"};
   my::sort(begin(v), end(v),
            [](const auto &a, const auto &b) { return a.size() >= b.size(); });
-  reverse(begin(s), end(s));
   CHECK(equal(begin(v), end(v), begin(s)));
 }

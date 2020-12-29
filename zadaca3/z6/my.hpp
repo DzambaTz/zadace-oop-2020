@@ -13,7 +13,7 @@ void sort(Iter begin, Iter end, lambda f) {
   do {
     swapped = false;
     for (; it != last_swap; ++it) {
-      if (f(*it, *(std::next(it)))) {
+      if (!f(*it, *(std::next(it)))) {
         std::swap(*it, *(std::next(it)));
         swapped = true;
       }
